@@ -15,18 +15,20 @@ do {
 if (sesionIniciada) {
     alert("Bienvenido al sistema")
 }
-
+alert ("Calcule el monto del margen de su negocio")
 let mensaje = "1 para Elastic Engineering\n2 para Servicios Profesionales\n3 para renventa de Infraestructura\n0 para salir"
 let servicio = Number(prompt(mensaje))
 let monto
-while (servicio > 0) {
+const EE = .45
+const PS = .50
+const REVENTA = .05
+while (servicio !== 0) {
     let monto = Number(prompt("Ingrese monto de venta"))
-
-    if (opcion === 1) {
-        alert("Resultado" + (monto * 1.45))
-    } else if (opcion === 2) {
-        alert("Resultado" + (monto * 1.667))
-    } else if (opcion === 3) {
-        alert("Resultado" + (monto * 1.07))}
+    if (servicio === 1) {
+        alert("El resultado " + ((monto / (1-EE)) - (monto)))
+    } else if (servicio === 2) {
+        alert("El resultado " + ((monto / (1-PS)) - (monto)))
+    } else if (servicio === 3) {
+        alert("El resultado " + ((monto / (1-REVENTA)) - (monto)))}
     servicio = Number(prompt(mensaje))
 }
